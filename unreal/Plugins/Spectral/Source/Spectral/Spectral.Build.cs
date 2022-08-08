@@ -56,15 +56,8 @@ public class Spectral : ModuleRules
         string SpectralDirectory = Path.Combine(BaseDirectory, "ThirdParty", "Spectral", Target.Platform.ToString());
         string CorsairDirectory = Path.Combine(BaseDirectory, "ThirdParty", "Corsair", Target.Platform.ToString());
 
-        if (Target.Platform == UnrealTargetPlatform.Win32)
-        {
-            RuntimeDependencies.Add(Path.Combine(SpectralDirectory, "Spectral.dll"));
-            RuntimeDependencies.Add(Path.Combine(CorsairDirectory, "CUESDK_2015.dll"));
-        }
-        else if (Target.Platform == UnrealTargetPlatform.Win64)
-        {
-            RuntimeDependencies.Add(Path.Combine(SpectralDirectory, "Spectral.dll"));
-            RuntimeDependencies.Add(Path.Combine(CorsairDirectory, "CUESDK.x64_2015.dll"));
-        }
-    }
+		RuntimeDependencies.Add(Path.Combine(SpectralDirectory, "Spectral.dll"));
+		RuntimeDependencies.Add(Path.Combine(CorsairDirectory, "CUESDK.x64_2015.dll"));
+		
+	}
 }
